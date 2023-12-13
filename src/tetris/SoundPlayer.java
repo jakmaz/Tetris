@@ -18,7 +18,7 @@ abstract class SoundPlayer {
     public static void playSound(String soundFileName) {
         try {
             // Open an audio input stream.
-            File soundFile = new File("Assets/" + soundFileName);
+            File soundFile = new File("src/Assets/" + soundFileName);
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
             // Get a sound clip resource.
             Clip clip = AudioSystem.getClip();
