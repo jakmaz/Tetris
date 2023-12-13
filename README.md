@@ -39,13 +39,3 @@ We have three options to choose – Random bot, Heuristic bot, and Heuristic bot
 
 - **Leaderboards:**
 User can store the score at end of each game by giving name as user input. Later, high scores can be viewed by pressing the button High Scores.
-
-
- ### AUTHORS
-- Dario Dastan  
-- Anil Koca  
-- Ethan de Beer   
-- Tristan Dormans  
-- Jacob Mazur  
-- Lakshana Sivaprakash 
-- Bassam Tayba
