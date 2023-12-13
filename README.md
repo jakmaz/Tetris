@@ -1,4 +1,4 @@
-# Pentomino solver - Group 20  
+# Tetris Game 
  12.12.2023
  ### PURPOSE OF PROJECT
 The purpose of this project is to develop an intelligent agent capable of playing and solving the classic game of Tetris. The agent uses different strategies and algorithms to optimize block placement, clear lines effectively, and score as many points as possible. It showcases the application of heuristic search, algorithm optimization, and the implementation of AI techniques in game playing.
