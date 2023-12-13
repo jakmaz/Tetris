@@ -7,10 +7,8 @@ public class LShape extends TetrisBlock {
     private static int[][] setShape() {
         return new int[][] {
                 // pentomino representation L
-                {1, 0},
-                {1, 0},
-                {1, 0},
-                {1, 1}
+                {0, 0, 0, 1},
+                {1, 1, 1, 1}
         };
     }
 

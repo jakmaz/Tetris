@@ -10,19 +10,31 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Represents the high scores screen in the Tetris game.
+ * This class is responsible for displaying the top player scores.
+ */
 public class HighScoresScreen extends JFrame {
-    List<Player> topPlayers;
+
+    /**
+     * Constructs the HighScoresScreen and sets up its components.
+     */
     public HighScoresScreen() {
         // Set up the JFrame
         setTitle("Tetris High Scores");
         setSize(600, 800);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Center the window
 
         HighScoresPanel panel = new HighScoresPanel();
         add(panel);
         setVisible(true);
     }
+
+    /**
+     * Retrieves and returns a list of top players' scores.
+     *
+     * @return A sorted list of top players based on their scores.
+     */
     private static List<Player> getTopScores() {
         List<Player> players = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader("leaderboard.txt"))) {
@@ -42,9 +54,22 @@ public class HighScoresScreen extends JFrame {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * A record representing a player with a name and a score.
+     */
     public record Player(String name, int score) {
     }
+
+    /**
+     * A JPanel subclass that is responsible for drawing the high scores on the screen.
+     */
     public static class HighScoresPanel extends JPanel {
+
+        /**
+         * Paints the high scores component.
+         *
+         * @param g The Graphics object to be used for painting.
+         */
         @Override
         protected void paintComponent(Graphics g) {
             super.paintComponents(g);

@@ -7,9 +7,9 @@ public class ZShape extends TetrisBlock {
     private static int[][] setShape() {
         return new int[][] {
                 // pentomino representation Z
-                {0, 1, 1},
+                {1, 1, 0},
                 {0, 1, 0},
-                {1, 1, 0}
+                {0, 1, 1}
         };
     }
 

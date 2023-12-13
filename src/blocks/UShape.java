@@ -7,9 +7,8 @@ public class UShape extends TetrisBlock {
     private static int[][] setShape() {
         return new int[][] {
                 // pentomino representation U
-                {1, 1},
-                {1, 0},
-                {1, 1}
+                {1, 0, 1},
+                {1, 1, 1}
         };
     }
 

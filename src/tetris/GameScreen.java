@@ -1,22 +1,53 @@
 package tetris;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 
+/**
+ * Represents the main game screen for the Tetris game.
+ * This class sets up the game area, initializes control bindings for gameplay,
+ * and starts the game thread.
+ */
 public class GameScreen extends JFrame {
     private final GameArea ga;
 
-    public GameScreen() {
-        ga = new GameArea(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    /**
+     * Constructs the GameScreen and initializes the game area.
+     *
+     * @param darkMode A boolean value to set the game in dark mode if true.
+     */
+    public GameScreen(boolean darkMode) {
+        this.getContentPane().setBackground(Color.BLACK);
+        ga = new GameArea(darkMode, false);
         this.add(ga);
         this.pack();
         this.setLocationRelativeTo(null);
-        this.setResizable(false);
+        this.setResizable(true);
         this.setVisible(true);
         initControls();
-        new GameThread(ga).start();
+        // Start the game thread
+        GameThread gameThread = new GameThread(ga);
+        gameThread.start();
+        // Set the default close operation to do nothing
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
+        // Add window listener to detect window closing event
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Interrupt the game thread
+                gameThread.interrupt();
+                // Dispose the frame
+                dispose();
+            }
+        });
     }
+
+    /**
+     * Initializes the control bindings for the game.
+     * Sets up the key bindings for moving the Tetris blocks and links them to the corresponding actions.
+     */
     private void initControls() {
         // sets key bindings and the actions assigned to them
         InputMap im = this.getRootPane().getInputMap();

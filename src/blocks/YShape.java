@@ -7,10 +7,8 @@ public class YShape extends TetrisBlock {
     private static int[][] setShape() {
         return new int[][] {
                 // pentomino representation Y
-                {1, 0},
-                {1, 1},
-                {1, 0},
-                {1, 0}
+                {1, 1, 1, 1},
+                {0, 1, 0, 0}
         };
     }
 
